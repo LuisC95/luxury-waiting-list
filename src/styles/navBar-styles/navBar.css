@@ -1,0 +1,97 @@
+:root {
+    --gradient-gold: linear-gradient(287deg, rgba(47, 35, 16, 0.00) -91.07%, rgba(122, 91, 26, 0.18) -71.5%, rgba(185, 139, 46, 0.34) -22.05%, rgba(231, 200, 104, 0.50) 40.18%, rgba(201, 166, 74, 0.66) 71.69%, rgba(142, 107, 35, 0.82) 108.44%, #3A2B14 177.67%), #fff;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*dding: 1rem 1rem;*/
+    margin: 1rem;
+    height: 3rem;
+    border-radius: 50px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 -1px 0 0 rgba(225, 225, 225, 0.00) inset, 0 1px 2px 0 rgba(0, 0, 0, 0.00) inset;
+    padding: 3px;
+    z-index: 100;
+}
+
+nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50em;
+    padding: 3px;
+    background: var(--gradient-gold);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    box-shadow: 0 -1px 0 0 rgba(225, 225, 225, 0.00) inset, 0 1px 2px 0 rgba(0, 0, 0, 0.00) inset;
+    z-index: -1;
+}
+
+
+.feature-list{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2{
+    font-size: 1.5rem;
+    color: white;
+    position: absolute;
+    left: 2rem;
+}
+
+.login-button {
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: absolute;
+    right: 0.5rem;
+    background: transparent;
+    font-weight: 600;
+    color: #C9A64A;
+    z-index: 1;
+    text-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.4),
+        /*inset 0 -1px 2px rgba(255, 255, 255, 0.3),
+        1px 1px 0 rgba(0, 0, 0, 0.8),
+        -1px -1px 0 rgba(255, 255, 255, 0.2);*/
+}
+
+.login-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-gold);
+    border-radius: 2rem;
+    z-index: -1;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.login-button:hover::before {
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4);
+}
